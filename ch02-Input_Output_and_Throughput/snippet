@@ -1,0 +1,35 @@
+## using escape sequences
+printf Q\t\141\n\x43\n
+
+##using format specifier with arguments
+printf "%s\n" Print arguments on separate lines
+
+## %b is like %s except that it interprets the escape sequences
+printf "%b\n" Hello\nWorld 12\tword
+
+## integer format specifier
+printf "%d\n" 23 45 56.78 0xff 011
+
+## decimal or floating point numbers
+printf "%f\n" 12.35 23.43 12.42 234.3332232
+
+## using exponential notation to present decimal numbers
+printf "%e\n" 12.35 23.43 12.42 234.3332232
+
+## print hexadecimal numbers
+printf "color : #%02x%02x%02x\n" 65 105 225
+
+## preceded with 0 for width specifications
+printf "%04d\n" 12 23 56 123 255
+
+## width specifier with a decimal fraction 
+## specifies the precision of a floating number
+## or the max width of a string
+printf "%12.4s %9.2f\n" John 2 Jackson 4.579 Walter 2.9
+
+## store output to variable with -v option
+printf -v num4 "%04d" 4
+printf "%s\n" "$num4"
+
+## redirecting output to a file
+printf "" > FILENAME
