@@ -1,0 +1,62 @@
+## example of an exit error
+## 1-255 inclusive for failures
+printf "%v\n"
+mkdir /qwerty
+
+## file tests
+test -f /etc/fstab.hd ## true if a regular file
+echo $?
+test -h /etc/rc.common ## true if a symbolic link
+echo $?
+[ -x ./snippet ] ## true if file is executable
+echo $?
+
+## integer tests
+test 1 -eq 1
+echo $?
+[ -2 -eq 1 ]
+echo $?
+[ -2 -ne 1 ]
+echo $?
+
+test "$a" "$b"
+[ "$q" != "$b" ]
+
+## -z tests for empty
+[ -z "" ]
+echo $?
+## -n tests for nonempty
+[ -n "" ]
+echo $?
+
+str1=abc
+str2=def
+test "$str1" \< "$str2"
+echo $?
+test "$str1" \> "$str2"
+echo $?
+
+## combined test 
+## -a (logical AND)
+## -o (logical OR)
+test -f ./snippet -a $test -eq 1; echo $?
+test -x ./snippet -o $test -gt 1; echo $?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
