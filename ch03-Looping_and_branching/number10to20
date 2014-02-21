@@ -1,0 +1,19 @@
+#!/usr/local/bin/bash
+#: Description : prompt for a number and check that it is between 10 and 20 inclusive
+#				 quit on "bye"
+while true; do
+	printf "Enter a number between 10 and 20 inclusive: "
+	read number
+	if [[ "$number" -eq "bye" ]]; then
+		exit 1
+	elif [[ "$number" -lt 10 ]]
+	then
+		printf "%d is too low\n" "$number"  >&2
+	elif [[ "$number" -gt 20 ]]; then
+		printf "%d is too high\n" "$number"  >&2
+
+	else
+		printf "You entered %d\n" "$number"
+	fi
+done
+
