@@ -1,0 +1,9 @@
+#!/usr/local/bin/bash
+#: Description : read input from standard input and print it out
+
+read name
+if [ -z "$name" ] 
+then
+	echo "No name entered" >&2
+	exit 1 ## Set a failed return code
+fi
