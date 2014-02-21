@@ -1,0 +1,17 @@
+#!/usr/local/bin/bash
+#: Description : prompt for a number and check that it is no greater than ten
+#                exit when user types bye
+while true; do
+	printf "Enter a number no greater than 10: "
+	read number
+	if [[ "$number" -eq "bye" ]]; then
+		exit 1
+	elif [[ "$number" -gt 10 ]]
+	then
+		printf "%d is too big\n" "$number"  >&2
+	else
+		printf "You entered %d\n" "$number"
+	fi
+
+done
+
