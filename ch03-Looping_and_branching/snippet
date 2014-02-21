@@ -43,15 +43,33 @@ test -f ./snippet -a $test -eq 1; echo $?
 test -x ./snippet -o $test -gt 1; echo $?
 
 
+string=whatever
+[[ $string =~ h[aeiou] ]]
+echo $?
 
+## test a directory exist
+test -d "$directory" && cd "$directory"
 
+## go to home directory, if fails, exit with an error
+cd "$HOME" || exit 1
 
+## create directory, cd to it
+mkdir "$HOME/bin" && cd "$HOME/bin" || exit 1
+ 
+if [ -d "$dir" ] && cd "$dir" then
+	echo "$PWD"
+fi
 
+## using case
+case $1 in 
+	*"$2"* true ;;
+	*) false ;;
+esac
 
-
-
-
-
+case $1 in 
+	*[!0-9]*) false ;;
+	*) true ;;
+esac
 
 
 
